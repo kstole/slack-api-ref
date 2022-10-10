@@ -2,4 +2,7 @@ source 'https://rubygems.org'
 
 group :test do
   gem 'slack-ruby-danger', '~> 0.2.0', require: false
+  gem 'danger', '~> 9.0.0', require: false
+  gem 'danger-changelog', '~> 0.6.1', require: false
+  gem 'danger-toc', '~> 0.2.0', require: false
 end
