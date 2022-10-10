@@ -1,5 +1,5 @@
 Slack API Reference
--------------------
+===================
 
 [![validate](https://github.com/slack-ruby/slack-api-ref/actions/workflows/validate.yml/badge.svg)](https://github.com/slack-ruby/slack-api-ref/actions/workflows/validate.yml)
 [![update](https://github.com/slack-ruby/slack-api-ref/actions/workflows/update.yml/badge.svg)](https://github.com/slack-ruby/slack-api-ref/actions/workflows/update.yml)
@@ -16,6 +16,13 @@ This is a maintained, machine-readable version of the Slack API Docs, generated 
 
 * [methods](methods/undocumented): Undocumented methods.
 * [groups](groups/undocumented): Undocumented groups.
+
+# Table of Contents
+
+- [It needs an update!](#it-needs-an-update)
+- [Usage](#usage)
+- [Slack](#slack)
+- [Copyright & License](#copyright--license)
 
 ### It needs an update!
 

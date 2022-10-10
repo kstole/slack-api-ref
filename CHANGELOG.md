@@ -4,6 +4,7 @@ Changelog
 Some notable infrastructure contributions below. See [commits](commits/master) for Slack API updates.
 
 * Your contribution here.
+* [#1](https://github.com/kstole/slack-api-ref/pull/1): Test pr linter - [@kstole](https://github.com/kstole).
 * [#58](https://github.com/slack-ruby/slack-api-ref/pull/58): Set up Rubocop - [@kstole](https://github.com/kstole).
 * [#55](https://github.com/slack-ruby/slack-api-ref/pull/55): Consider `Deprecated:` label in API method summary - [@kstole](https://github.com/kstole).
 * Updated crawlers to use new API documentation DOM - [@chrisbloom7](https://github.com/chrisbloom7).
