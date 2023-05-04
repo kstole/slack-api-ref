@@ -4,6 +4,11 @@
   "deprecated": false,
   "desc": "List app requests for a team/workspace.",
   "args": {
+    "certified": {
+      "required": false,
+      "desc": "Limit the results to only include certified apps. When false, no certified apps will appear in the result.",
+      "type": "boolean"
+    },
     "cursor": {
       "required": false,
       "desc": "Set cursor to next_cursor returned by the previous call to list items in the next page.",
