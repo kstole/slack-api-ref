@@ -21,7 +21,7 @@
     },
     "date_start": {
       "required": false,
-      "desc": "Call start time in UTC UNIX timestamp format.",
+      "desc": "Unix timestamp of the call start time.",
       "type": "integer"
     },
     "desktop_app_join_url": {
