@@ -11,7 +11,7 @@
     },
     "team": {
       "required": false,
-      "desc": "Team to get info on, if omitted, will return information about the current team. Will only return team that the authenticated token is allowed to see through external shared channels.",
+      "desc": "Team to get info about; if omitted, will return information about the current team.",
       "type": "string"
     }
   },
