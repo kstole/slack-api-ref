@@ -1,52 +1,49 @@
 {
-  "group": "usergroups",
-  "name": "usergroups.users.update",
+  "group": "reactions",
+  "name": "reactions.list",
   "deprecated": false,
-  "desc": "Update the list of users for a User Group",
+  "desc": "Lists reactions made by a user.",
   "args": {
-    "usergroup": {
-      "required": true,
-      "desc": "The encoded ID of the User Group to update.",
+    "cursor": {
+      "required": false,
+      "desc": "Parameter for pagination. Set cursor equal to the next_cursor attribute returned by the previous request's response_metadata. This parameter is optional, but pagination is mandatory: the default value simply fetches the first \"page\" of the collection. See pagination for more details.",
       "type": "string"
     },
-    "users": {
-      "required": true,
-      "desc": "A comma separated string of encoded user IDs that represent the entire list of users for the User Group.",
-      "type": "array"
-    },
-    "include_count": {
+    "full": {
       "required": false,
-      "desc": "Include the number of users in the User Group.",
+      "desc": "If true always return the complete reaction list.",
       "type": "boolean"
+    },
+    "limit": {
+      "required": false,
+      "desc": "The maximum number of items to return. Fewer than the requested number of items may be returned, even if the end of the list hasn't been reached.",
+      "type": "integer"
     },
     "team_id": {
       "required": false,
-      "desc": "encoded team id where the user group exists, required if org token is used.",
+      "desc": "encoded team id to list reactions in, required if org token is used.",
       "type": "string"
+    },
+    "user": {
+      "required": false,
+      "desc": "Show reactions made by this user. Defaults to the authed user.",
+      "type": "user"
     }
   },
   "response": {
     "examples": [
-      "{\n    \"ok\": true,\n    \"usergroup\": {\n        \"id\": \"S0616NG6M\",\n        \"team_id\": \"T060R4BHN\",\n        \"is_usergroup\": true,\n        \"name\": \"Marketing Team\",\n        \"description\": \"Marketing gurus, PR experts and product advocates.\",\n        \"handle\": \"marketing-team\",\n        \"is_external\": false,\n        \"date_create\": 1447096577,\n        \"date_update\": 1447102109,\n        \"date_delete\": 0,\n        \"auto_type\": null,\n        \"created_by\": \"U060R4BJ4\",\n        \"updated_by\": \"U060R4BJ4\",\n        \"deleted_by\": null,\n        \"prefs\": {\n            \"channels\": [],\n            \"groups\": []\n        },\n        \"users\": [\n            \"U060R4BJ4\",\n            \"U060RNRCZ\"\n        ],\n        \"user_count\": 1\n    }\n}",
+      "{\n    \"items\": [\n        {\n            \"type\": \"message\",\n            \"channel\": \"C123ABC456\",\n            \"message\": {\n                \"bot_id\": \"B123ABC456\",\n                \"reactions\": [\n                    {\n                        \"count\": 1,\n                        \"name\": \"robot_face\",\n                        \"users\": [\n                            \"U123ABC456\"\n                        ]\n                    }\n                ],\n                \"subtype\": \"bot_message\",\n                \"text\": \"Hello from Python! :tada:\",\n                \"ts\": \"1507849573.000090\",\n                \"username\": \"Shipit Notifications\"\n            }\n        },\n        {\n            \"comment\": {\n                \"type\": \"file_comment\",\n                \"comment\": \"This is a file comment\",\n                \"created\": 1508286096,\n                \"id\": \"Fc123ABC456\",\n                \"reactions\": [\n                    {\n                        \"count\": 1,\n                        \"name\": \"white_check_mark\",\n                        \"users\": [\n                            \"U123ABC456\"\n                        ]\n                    }\n                ],\n                \"timestamp\": 1508286096,\n                \"user\": \"U123ABC456\"\n            },\n            \"file\": {\n                \"channels\": [\n                    \"C123ABC456\"\n                ],\n                \"comments_count\": 1,\n                \"created\": 1507850315,\n                \"reactions\": [\n                    {\n                        \"count\": 1,\n                        \"name\": \"stuck_out_tongue_winking_eye\",\n                        \"users\": [\n                            \"U123ABC456\"\n                        ]\n                    }\n                ],\n                \"title\": \"computer.gif\",\n                \"user\": \"U123ABC456\",\n                \"username\": \"\"\n            }\n        },\n        {\n            \"file\": {\n                \"channels\": [\n                    \"C123ABC456\"\n                ],\n                \"comments_count\": 1,\n                \"created\": 1507850315,\n                \"id\": \"F123ABC456\",\n                \"name\": \"computer.gif\",\n                \"reactions\": [\n                    {\n                        \"count\": 1,\n                        \"name\": \"stuck_out_tongue_winking_eye\",\n                        \"users\": [\n                            \"U123ABC456\"\n                        ]\n                    }\n                ],\n                \"size\": 1639034,\n                \"title\": \"computer.gif\",\n                \"user\": \"U123ABC456\",\n                \"username\": \"\"\n            },\n            \"type\": \"file\"\n        }\n    ],\n    \"ok\": true,\n    \"response_metadata\": {\n        \"next_cursor\": \"dGVhbTpDMUg5UkVTR0w=\"\n    }\n}",
       "{\n    \"ok\": false,\n    \"error\": \"invalid_auth\"\n}"
     ]
   },
   "errors": {
-    "invalid_users": "Value passed for users was empty or invalid.",
-    "failed_for_some_users": "User(s) are not in the workspace where this usergroup exists.",
-    "missing_argument": "A required argument is missing.",
-    "no_users_provided": "Either the users field wasn't provided or an empty value was passed.",
-    "permission_denied": "The user does not have permission to update the list of users for a User Group. Check workspace settings to confirm whether the calling user has permission.",
-    "plan_upgrade_required": "This workspace does not have access to User Groups, as that feature is only available on Standard and above plans.",
-    "subteam_max_users_exceeded": "Exceeds maximum supported number of users per subteam.",
+    "user_not_found": "Value passed for user was invalid.",
     "access_denied": "Access to a resource specified in the request is denied.",
     "account_inactive": "Authentication token is for a deleted user or workspace when using a bot token.",
     "deprecated_endpoint": "The endpoint has been deprecated.",
     "ekm_access_denied": "Administrators have suspended the ability to post a message.",
     "enterprise_is_restricted": "The method cannot be called from an Enterprise.",
     "invalid_auth": "Some aspect of authentication cannot be validated. Either the provided token is invalid or the request originates from an IP address disallowed from making the request.",
-    "is_bot": "This method cannot be called by a bot user.",
-    "user_is_restricted": "This method cannot be called by a restricted user or single channel guest.",
     "method_deprecated": "The method has been deprecated.",
     "missing_scope": "The token used is not granted the specific scope permissions required to complete this request.",
     "not_allowed_token_type": "The token type used in this request is not allowed.",
@@ -71,5 +68,7 @@
     "request_timeout": "The method was called via a POST request, but the POST data was either missing or truncated.",
     "service_unavailable": "The service is temporarily unavailable.",
     "team_added_to_org": "The workspace associated with your request is currently undergoing migration to an Enterprise Organization. Web API and other platform operations will be intermittently unavailable until the transition is complete."
-  }
+  },
+  "has_paging": true,
+  "default_count": 100
 }
