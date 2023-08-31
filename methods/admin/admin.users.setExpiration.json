@@ -6,7 +6,7 @@
   "args": {
     "expiration_ts": {
       "required": true,
-      "desc": "Timestamp when guest account should be disabled.",
+      "desc": "Epoch timestamp in seconds when guest account should be disabled.",
       "type": "integer"
     },
     "user_id": {
