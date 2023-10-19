@@ -9,6 +9,11 @@
       "desc": "Set cursor to next_cursor returned by the previous call to list items in the next page.",
       "type": "string"
     },
+    "is_active": {
+      "required": false,
+      "desc": "If true, only active users will be returned.",
+      "type": "boolean"
+    },
     "limit": {
       "required": false,
       "desc": "Limit for how many users to be retrieved per page.",
