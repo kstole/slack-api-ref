@@ -11,7 +11,7 @@
     },
     "post_at": {
       "required": true,
-      "desc": "Unix EPOCH timestamp of time in future to send the message.",
+      "desc": "Unix timestamp representing the future time the message should post to Slack.",
       "type": "integer"
     },
     "attachments": {
