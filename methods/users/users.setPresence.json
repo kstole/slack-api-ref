@@ -7,7 +7,7 @@
     "presence": {
       "required": true,
       "desc": "Either auto or away.",
-      "type": "string"
+      "type": "enum"
     }
   },
   "response": {

@@ -22,7 +22,7 @@
     "grant_type": {
       "required": false,
       "desc": "The grant_type param as described in the OAuth spec.",
-      "type": "string"
+      "type": "enum"
     },
     "redirect_uri": {
       "required": false,

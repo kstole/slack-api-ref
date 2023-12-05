@@ -51,7 +51,7 @@
     "sort_direction": {
       "required": false,
       "desc": "The direction you want the data sorted by (always by timestamp).",
-      "type": "string"
+      "type": "enum"
     },
     "source": {
       "required": false,

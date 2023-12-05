@@ -7,7 +7,7 @@
     "visibility": {
       "required": false,
       "desc": "Filter by visibility.",
-      "type": "string"
+      "type": "enum"
     }
   },
   "response": {
