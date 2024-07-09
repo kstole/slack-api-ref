@@ -6,7 +6,7 @@
   "args": {
     "target_team": {
       "required": true,
-      "desc": "The encoded team ID of the target team."
+      "desc": "The team ID of the target team."
     }
   },
   "response": {
