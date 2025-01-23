@@ -13,6 +13,11 @@
       "required": false,
       "desc": "Channel ID where the file will be shared. If not specified the file will be private."
     },
+    "channels": {
+      "required": false,
+      "desc": "Comma-separated string of channel IDs where the file will be shared.",
+      "type": "string"
+    },
     "initial_comment": {
       "required": false,
       "desc": "The message text introducing the file in specified channels.",
@@ -20,7 +25,7 @@
     },
     "thread_ts": {
       "required": false,
-      "desc": "Provide another message's ts value to upload this file as a reply. Never use a reply's ts value; use its parent instead.",
+      "desc": "Provide another message's ts value to upload this file as a reply. Never use a reply's ts value; use its parent instead. Also make sure to provide only one channel when using 'thread_ts'.",
       "type": "string"
     }
   },
@@ -38,6 +43,7 @@
     "invalid_channel": "Channel could not be found or channel specified is invalid.",
     "not_in_channel": "User/bot membership is required for the specified channel.",
     "posting_to_channel_denied": "User is not authorized to post to channel.",
+    "channels_limit_exceeded": "Exceeded the channel limit. A maximum of 100 channels is allowed per request.",
     "account_inactive": "Authentication token is for a deleted user or workspace when using a bot token.",
     "deprecated_endpoint": "The endpoint has been deprecated.",
     "ekm_access_denied": "Administrators have suspended the ability to post a message.",
