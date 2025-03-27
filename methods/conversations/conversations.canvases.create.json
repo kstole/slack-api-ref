@@ -12,6 +12,11 @@
     "document_content": {
       "required": false,
       "desc": "Structure describing the type and value of the content to create."
+    },
+    "title": {
+      "required": false,
+      "desc": "Title of the newly created canvas.",
+      "type": "string"
     }
   },
   "response": {
