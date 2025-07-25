@@ -1,30 +1,16 @@
 {
-  "group": "workflows",
-  "name": "workflows.featured.add",
+  "group": "assistant",
+  "name": "assistant.search.info",
   "deprecated": false,
-  "desc": "Add featured workflows to a channel.",
+  "desc": "Returns search capabilities on a given team.",
   "args": {
-    "channel_id": {
-      "required": true,
-      "desc": "Channel to add featured workflow in.",
-      "type": "string"
-    },
-    "trigger_ids": {
-      "required": true,
-      "desc": "Comma-separated array of trigger IDs to add; max 15.",
-      "type": "array"
-    }
   },
   "response": {
     "examples": [
-      "{\n    \"ok\": true\n}",
-      "{\n    \"ok\": false,\n    \"error\": \"error_modifying_workflows\"\n}"
+      "{\n    \"ok\": true,\n    \"is_ai_search_enabled\": true\n}"
     ]
   },
   "errors": {
-    "method_not_supported": "Method not yet supported.",
-    "restricted_action": "User does not have access to this method.",
-    "error_modifying_workflows": "Error modifying workflows.",
     "access_denied": "Access to a resource specified in the request is denied.",
     "account_inactive": "Authentication token is for a deleted user or workspace when using a bot token.",
     "deprecated_endpoint": "The endpoint has been deprecated.",
